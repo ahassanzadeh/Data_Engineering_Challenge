@@ -1,0 +1,6 @@
+department_id,number_of_orders,number_of_first_orders,percentage
+3,2,1,0.5
+4,2,0,0.0
+12,1,0,0.0
+13,2,1,0.5
+16,2,0,0.0
