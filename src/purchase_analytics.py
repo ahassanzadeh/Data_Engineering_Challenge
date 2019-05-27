@@ -1,10 +1,5 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""
-Created on Sat May 25 16:50:21 2019
-
-@author: xiumin
-"""
 import time
 
 import os
