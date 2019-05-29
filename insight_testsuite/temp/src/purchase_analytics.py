@@ -4,9 +4,10 @@
 """
 Insight Challenge: Purchase-Analytics
 Author: Ali Hassanzadeh
-Data: 5/29/2019
-""" 
- #import time
+Data: 2/28/2019
+"""
+
+#import time
 import os
 
 order_data=[]# use to store the order_product data read from the order_products.csv file
@@ -40,20 +41,13 @@ def read_data( ):
     #start=time.time()    
     with open(path1, 'r') as order_csv: # run on submission link but not on PC
     #with open(path1, 'r',  encoding="utf8" ) as order_csv: # run on PC           
-        lines_order = [line_order.rstrip() for line_order in order_csv] 
-        
-        for line_order in lines_order[1:]:
-            words=line_order.split(',')
-            order_data.append([int(words[0]),int(words[1]),int(words[2]),int(words[3])])
-        
-        """
+        lines_order = [line_order.rstrip() for line_order in order_csv]   
         for line_order in lines_order:
             if order_title < 1:
                 words=line_order.split(',')
                 order_data.append([int(words[0]),int(words[1]),int(words[2]),int(words[3])])
             else:
                 order_title=0
-            """
                 #print(line_order.split(',')) # print the header line   
     #end=time.time()
     #print("time cost for reading order_products.csv = ", -(start-end)) 
@@ -61,19 +55,13 @@ def read_data( ):
     #start=time.time()  
     with open(path2, 'r') as product_csv: # run on submission link but not on PC
     #with open(path2, 'r',  encoding="utf8" ) as product_csv: # run on PC but not the submission link
-        lines_product = [line_product.rstrip() for line_product in product_csv] 
-        for line_product in lines_product[1:]:
-            words=line_product.split(',')
-            product_data.append([ int(words[0]), words[1], int(words[len(words)-2]), int(words[len(words)-1])] )
-        
-        """
+        lines_product = [line_product.rstrip() for line_product in product_csv]   
         for line_product in lines_product:
             if product_title < 1:
                 words=line_product.split(',')
                 product_data.append([ int(words[0]), words[1], int(words[len(words)-2]), int(words[len(words)-1])] )
             else:
                 product_title=0
-                """
                 #print(line_product.split(',')) # use to print out the header line               
     #end=time.time()
     #print("time cost for reading products.csv = ", -(start-end))
@@ -243,7 +231,7 @@ if __name__=="__main__":
     for testing the order_products_prior.csv 
     the total order number = 32434489
     the total first time order number = 13307953
-    the total time cost is around 100s with my PC at home 
+    the total time cost is around 100s
 
     print("length = ", len(order_data))
     
