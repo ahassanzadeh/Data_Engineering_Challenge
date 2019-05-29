@@ -22,9 +22,9 @@ bigtestpath1=os.path.join(os.path.abspath(os.pardir), 'input/order_products.csv'
 bigtestpath2=os.path.join(os.path.abspath(os.pardir), 'input/products.csv')
 bigtestpath3=os.path.join(os.path.abspath(os.pardir), 'output/report.csv')
     
-path1=bigtestpath1
-path2=bigtestpath2
-path3=bigtestpath3
+path1=testpath1
+path2=testpath2
+path3=testpath3
 
 def read_data( ):
     """
@@ -34,27 +34,13 @@ def read_data( ):
     product_data<--products.csv
     """
     
-    order_title=1 # use to skip the first header line in the .csv file
-    product_title=1 # use to skip the first header line in the .csv file
-    
     #start=time.time()    
     with open(path1, 'r') as order_csv: # run on submission link but not on PC
     #with open(path1, 'r',  encoding="utf8" ) as order_csv: # run on PC           
         lines_order = [line_order.rstrip() for line_order in order_csv] 
-        
         for line_order in lines_order[1:]:
             words=line_order.split(',')
             order_data.append([int(words[0]),int(words[1]),int(words[2]),int(words[3])])
-        
-        """
-        for line_order in lines_order:
-            if order_title < 1:
-                words=line_order.split(',')
-                order_data.append([int(words[0]),int(words[1]),int(words[2]),int(words[3])])
-            else:
-                order_title=0
-            """
-                #print(line_order.split(',')) # print the header line   
     #end=time.time()
     #print("time cost for reading order_products.csv = ", -(start-end)) 
 
@@ -65,16 +51,6 @@ def read_data( ):
         for line_product in lines_product[1:]:
             words=line_product.split(',')
             product_data.append([ int(words[0]), words[1], int(words[len(words)-2]), int(words[len(words)-1])] )
-        
-        """
-        for line_product in lines_product:
-            if product_title < 1:
-                words=line_product.split(',')
-                product_data.append([ int(words[0]), words[1], int(words[len(words)-2]), int(words[len(words)-1])] )
-            else:
-                product_title=0
-                """
-                #print(line_product.split(',')) # use to print out the header line               
     #end=time.time()
     #print("time cost for reading products.csv = ", -(start-end))
                 
