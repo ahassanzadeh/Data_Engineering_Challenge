@@ -22,9 +22,9 @@ bigtestpath1=os.path.join(os.path.abspath(os.pardir), 'input/order_products.csv'
 bigtestpath2=os.path.join(os.path.abspath(os.pardir), 'input/products.csv')
 bigtestpath3=os.path.join(os.path.abspath(os.pardir), 'output/report.csv')
     
-path1=testpath1
-path2=testpath2
-path3=testpath3
+path1=bigtestpath1
+path2=bigtestpath2
+path3=bigtestpath3
 
 def read_data( ):
     """
