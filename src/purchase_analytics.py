@@ -31,8 +31,8 @@ def read_data(order_title,product_title):
     
     
     start=time.time()
-    
-    with open(path1, 'r', encoding="utf8") as order_csv:
+    #, encoding="utf8"
+    with open(path1, 'r') as order_csv:
     #read from csv line by line, rstrip helps to remove '\n' at the end of line
         lines_order = [line_order.rstrip() for line_order in order_csv]   
         for line_order in lines_order:
@@ -49,8 +49,8 @@ def read_data(order_title,product_title):
     print("time cost for reading order_products.csv = ", -(start-end)) 
 
     start=time.time()
-         
-    with open(path2, 'r', encoding="utf8") as product_csv:
+    #, encoding="utf8"    
+    with open(path2, 'r') as product_csv:
     #read from csv line by line, rstrip helps to remove '\n' at the end of line
         lines_product = [line_product.rstrip() for line_product in product_csv]   
         for line_product in lines_product:
