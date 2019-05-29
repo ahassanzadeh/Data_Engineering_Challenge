@@ -4,7 +4,7 @@
 """
 Insight Challenge: Purchase-Analytics
 Author: Ali Hassanzadeh
-Data: 5/29/2019
+Date: 5/29/2019
 """ 
  #import time
 import os
@@ -118,6 +118,7 @@ def search_product_id():
             index=binarySearch(product_data,index+1, 0,data[1]) # search if the current data record is in product.csv file
             #index=sequenceSearch(product_data,index+1, 0, data[1])
             temp=data # need to update temp
+            
         if index > -1:
             order_data_add_department_id.append((data[0],data[1],data[2],data[3],product_data[index][3]))
         else:
@@ -214,19 +215,10 @@ if __name__=="__main__":
     #end1=time.time() #use to check the whole program running time
     #print("time cost for total project = ", (end1-start1))
     
-"""        
+ """        
     use to check the whole length for total order numbers and total first orders in order to quantitatively compare with the final report data
     for testing the order_products_prior.csv 
     the total order number = 32434489
     the total first time order number = 13307953
     the total time cost is around 100s with my PC at home 
-
-    print("length = ", len(order_data))
-    
-    count=0 # use to count total first order number
-    for dd in order_data:
-        if dd[3]==0:
-            count+=1
-    print("zero numbers = ", count)
-    
   """  
