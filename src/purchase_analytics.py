@@ -208,7 +208,7 @@ def binarySearch(datalist, start, col, target): # col use to indecate which colo
 
 
 if __name__=="__main__":
-    
+        
     #start1=time.time() # use to check the whole program running time
     
     read_data()     
@@ -231,6 +231,7 @@ if __name__=="__main__":
     for testing the order_products_prior.csv 
     the total order number = 32434489
     the total first time order number = 13307953
+    the total time cost is around 100s
 
     print("length = ", len(order_data))
     
