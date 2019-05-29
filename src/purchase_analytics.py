@@ -32,7 +32,7 @@ def read_data(order_title,product_title):
     
     start=time.time()
     
-    with open(path1, 'r') as order_csv:
+    with open(path1, 'r', encoding="utf8") as order_csv:
     #read from csv line by line, rstrip helps to remove '\n' at the end of line
         lines_order = [line_order.rstrip() for line_order in order_csv]   
         for line_order in lines_order:
@@ -50,7 +50,7 @@ def read_data(order_title,product_title):
 
     start=time.time()
          
-    with open(path2, 'r') as product_csv:
+    with open(path2, 'r', encoding="utf8") as product_csv:
     #read from csv line by line, rstrip helps to remove '\n' at the end of line
         lines_product = [line_product.rstrip() for line_product in product_csv]   
         for line_product in lines_product:
@@ -164,7 +164,9 @@ def calculate_report_data():
             if count_total==0: 
                 print("ratio calculation error!")
             else:
-                report_data.append((temp[4],count_total,count_zero, round(float(count_zero/count_total),2)))
+                #int(count_zero/count_total*100)/100
+                #
+                report_data.append((temp[4],count_total, count_zero, round((count_zero/count_total),2)  ))
             
             count_total=1
             if data[3]==0:                
@@ -178,7 +180,7 @@ def calculate_report_data():
                 count_zero+=1 
             #if data==order_data_add_department_id[len(order_data_add_department_id)-1]:
             if index==len(order_data_add_department_id):
-                report_data.append((data[4],count_total,count_zero, round(float(count_zero/count_total),2)))
+                report_data.append((data[4], count_total, count_zero, round((count_zero/count_total),2) ))
         
                      
     print("report_data")
