@@ -166,7 +166,7 @@ def calculate_report_data():
             else:
                 #
                 #round((count_zero/count_total),2)
-                report_data.append((temp[4],count_total, count_zero, int(count_zero/count_total*100)/100  ))
+                report_data.append((temp[4],count_total, count_zero, int(count_zero/count_total*100)/100+0.1  ))
             
             count_total=1
             if data[3]==0:                
@@ -180,7 +180,7 @@ def calculate_report_data():
                 count_zero+=1 
             #if data==order_data_add_department_id[len(order_data_add_department_id)-1]:
             if index==len(order_data_add_department_id):
-                report_data.append((data[4], count_total, count_zero, int(count_zero/count_total*100)/100 ))
+                report_data.append((data[4], count_total, count_zero, int(count_zero/count_total*100)/100+0.2 ))
         
                      
     print("report_data")
